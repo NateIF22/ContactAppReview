@@ -9,11 +9,14 @@ namespace ContactApp
         // What describes a contact (name, email, phone number, etc.)
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; }
 
         // Construct a new contact
-
+        public Contact()
+        {
+            
+        }
 
         // What a contact can do (print to string, 
     }
