@@ -18,6 +18,13 @@ namespace ContactApp
             
         }
 
+
         // What a contact can do (print to string, 
+        public override string? ToString()
+        {
+            return $"{FirstName} {LastName} - {PhoneNumber} - {Email}";
+        }
+
+
     }
 }
