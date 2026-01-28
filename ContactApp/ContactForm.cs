@@ -1,4 +1,7 @@
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
+
+#pragma warning disable WFO1000
 
 namespace ContactApp
 {
@@ -11,12 +14,16 @@ namespace ContactApp
 
             InitializeComponent();
             Contacts = new List<Contact>();
-            AddContact(new Contact
+
+        }
+
+        public void UpdateContactListBox()
+        {
+            lbContacts.Items.Clear();
+            foreach (Contact contact in Contacts)
             {
-                FirstName = "John",
-                LastName = "Doe",
-                Email = "john@email.com"
-            });
+                lbContacts.Items.Add(contact);
+            }
         }
 
         private void ContactForm_Load(object sender, EventArgs e)
@@ -27,25 +34,40 @@ namespace ContactApp
             }
         }
 
-        //public void AddContact(
-        //    string first,
-        //    string last,
-        //    string? phone = null,
-        //    string? email = null
-        //    )
-        //{
-        //    Contacts.Add(new Contact
-        //    {
-        //        FirstName = first,
-        //        LastName = last,
-        //        PhoneNumber = phone,
-        //        Email = email
-        //    });
-        //}
-
-        public void AddContact(Contact contact)
+        public void AddContact(
+            string first,
+            string last,
+            string? phone,
+            string? email
+            )
         {
-            Contacts.Add(contact);
+            //Fix later
+            Contacts.Add(new Contact
+            {
+                FirstName = first,
+                LastName = last,
+                PhoneNumber = phone,
+                Email = email,
+            });
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //Capture data
+            //crate a nre contact
+            Contact newContact = new Contact
+            {
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                PhoneNumber = txtPhone.Text,
+                Email = txtEmail.Text,
+            };
+
+            //add to list
+            Contacts.Add(newContact);
+
+            //pull the lever to update
+            UpdateContactListBox();
         }
     }
 }
