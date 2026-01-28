@@ -54,9 +54,10 @@ namespace ContactApp
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Capture data
-            //crate a nre contact
+            //create a nre contact
             Contact newContact = new Contact
             {
+
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
                 PhoneNumber = txtPhone.Text,
@@ -69,5 +70,22 @@ namespace ContactApp
             //pull the lever to update
             UpdateContactListBox();
         }
+
+        private void lbContacts_Click(object sender, EventArgs e)
+        {
+            Contact selectedItem = (Contact) lbContacts.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                int SelectedIndex = lbContacts.SelectedIndex;
+                Debug.WriteLine($"Contact list box was clicked - {selectedItem}");
+                
+                selectedItem.isContacted = true;
+                
+                lbContacts.Items[SelectedIndex] = selectedItem;
+            }
+        }
+
+
     }
 }

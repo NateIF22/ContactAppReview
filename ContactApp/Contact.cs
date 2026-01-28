@@ -11,6 +11,7 @@ namespace ContactApp
         public string LastName { get; set; }
         public string? Email { get; set; }
         public string? PhoneNumber { get; set; }
+        public bool isContacted { get; set; } = false;
 
         // Construct a new contact
         public Contact()
@@ -22,7 +23,7 @@ namespace ContactApp
         // What a contact can do (print to string, 
         public override string? ToString()
         {
-            return $"{FirstName} {LastName} - {PhoneNumber} - {Email}";
+            return $"Name: {FirstName} {LastName} Phone: {PhoneNumber} Email: {Email} - Contacted: {isContacted}";
         }
 
 
