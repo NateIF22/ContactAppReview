@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             gbContact = new GroupBox();
+            btnClear = new Button();
             btnSave = new Button();
             txtEmail = new TextBox();
             lblEmail = new Label();
@@ -40,7 +41,6 @@
             lblFirstName = new Label();
             lblContactForm = new Label();
             lbContacts = new ListBox();
-            btnClear = new Button();
             gbContact.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             gbContact.TabIndex = 0;
             gbContact.TabStop = false;
             gbContact.Text = "Contact Form";
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(276, 159);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Clicked;
             // 
             // btnSave
             // 
@@ -156,18 +166,9 @@
             lbContacts.TabIndex = 2;
             lbContacts.Click += lbContacts_Click;
             // 
-            // btnClear
-            // 
-            btnClear.Location = new Point(276, 159);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(94, 29);
-            btnClear.TabIndex = 8;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Clicked;
-            // 
             // ContactForm
             // 
+            AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(482, 453);

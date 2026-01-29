@@ -62,6 +62,32 @@ namespace ContactApp
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Capture data
+
+            // Validate the data, pull the lever if valid
+            if (txtFirstName.Text.Length <= 0) // CHeck if 
+            { 
+                //No text, fail.
+                MessageBox.Show("First Name must contain at least one letter.", "Error");
+                txtFirstName.Focus();
+                return;
+            }
+
+            if (txtLastName.Text.Length <= 0) // CHeck if 
+            {
+                //No text, fail.
+                MessageBox.Show("Last Name must contain at least one letter.", "Error");
+                txtLastName.Focus();
+                return;
+            }
+
+            if (txtEmail.Text.Length <= 0 && txtPhone.Text.Length <= 0) // CHeck if 
+            {
+                //No text, fail.
+                MessageBox.Show("You must have at least a phone number or contact fot this customer.", "Error");
+                txtPhone.Focus();
+                return;
+            }
+
             //create a nre contact
             Contact newContact = new Contact
             {
@@ -94,6 +120,11 @@ namespace ContactApp
                 selectedItem.isContacted = true;
 
                 lbContacts.Items[SelectedIndex] = selectedItem;
+
+                //Show message box saying contact marked as contacted
+                
+                MessageBox.Show($"{selectedItem.FirstName} {selectedItem.LastName} Has been contacted. Marked status to Contacted.", "Success");
+                //lbContacts.Items.RemoveAt(SelectedIndex);
             }
         }
 
