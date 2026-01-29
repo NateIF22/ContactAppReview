@@ -40,6 +40,7 @@
             lblFirstName = new Label();
             lblContactForm = new Label();
             lbContacts = new ListBox();
+            btnClear = new Button();
             gbContact.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             // 
             gbContact.AutoSize = true;
             gbContact.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            gbContact.Controls.Add(btnClear);
             gbContact.Controls.Add(btnSave);
             gbContact.Controls.Add(txtEmail);
             gbContact.Controls.Add(lblEmail);
@@ -154,6 +156,16 @@
             lbContacts.TabIndex = 2;
             lbContacts.Click += lbContacts_Click;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(276, 159);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Clicked;
+            // 
             // ContactForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -188,5 +200,6 @@
         private TextBox txtPhone;
         private Label lblPhone;
         private Button btnSave;
+        private Button btnClear;
     }
 }

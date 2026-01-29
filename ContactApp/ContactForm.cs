@@ -51,6 +51,14 @@ namespace ContactApp
             });
         }
 
+        private void ClearForm()
+        {
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhone.Clear();
+            txtEmail.Clear();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Capture data
@@ -69,23 +77,30 @@ namespace ContactApp
 
             //pull the lever to update
             UpdateContactListBox();
+
+            ClearForm();
+            txtFirstName.Focus();
         }
 
         private void lbContacts_Click(object sender, EventArgs e)
         {
-            Contact selectedItem = (Contact) lbContacts.SelectedItem;
+            Contact selectedItem = (Contact)lbContacts.SelectedItem;
 
             if (selectedItem != null)
             {
                 int SelectedIndex = lbContacts.SelectedIndex;
                 Debug.WriteLine($"Contact list box was clicked - {selectedItem}");
-                
+
                 selectedItem.isContacted = true;
-                
+
                 lbContacts.Items[SelectedIndex] = selectedItem;
             }
         }
 
-
+        private void btnClear_Clicked(object sender, EventArgs e)
+        {
+            ClearForm();
+            txtFirstName.Focus();
+        }
     }
 }
