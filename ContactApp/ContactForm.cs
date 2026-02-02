@@ -41,7 +41,6 @@ namespace ContactApp
             string? email
             )
         {
-            //Fix later
             Contacts.Add(new Contact
             {
                 FirstName = first,

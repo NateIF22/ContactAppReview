@@ -39,8 +39,6 @@
             lblLastName = new Label();
             txtFirstName = new TextBox();
             lblFirstName = new Label();
-            lblContactForm = new Label();
-            lbContacts = new ListBox();
             gbContact.SuspendLayout();
             SuspendLayout();
             // 
@@ -149,31 +147,12 @@
             lblFirstName.TabIndex = 0;
             lblFirstName.Text = "First Name";
             // 
-            // lblContactForm
-            // 
-            lblContactForm.AutoSize = true;
-            lblContactForm.Location = new Point(18, 209);
-            lblContactForm.Name = "lblContactForm";
-            lblContactForm.Size = new Size(0, 20);
-            lblContactForm.TabIndex = 1;
-            // 
-            // lbContacts
-            // 
-            lbContacts.FormattingEnabled = true;
-            lbContacts.Location = new Point(12, 237);
-            lbContacts.Name = "lbContacts";
-            lbContacts.Size = new Size(458, 204);
-            lbContacts.TabIndex = 2;
-            lbContacts.Click += lbContacts_Click;
-            // 
             // ContactForm
             // 
             AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(482, 453);
-            Controls.Add(lbContacts);
-            Controls.Add(lblContactForm);
             Controls.Add(gbContact);
             Name = "ContactForm";
             Text = "Contacts";
@@ -187,8 +166,6 @@
         #endregion
 
         private GroupBox gbContact;
-        private Label lblContactForm;
-        private ListBox lbContacts;
         private TextBox txtFirstName;
         private Label lblFirstName;
         private TextBox textBox2;
