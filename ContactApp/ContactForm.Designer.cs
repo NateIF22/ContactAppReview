@@ -171,8 +171,8 @@
             AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(482, 453);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(492, 469);
             Controls.Add(lbContacts);
             Controls.Add(lblContactForm);
             Controls.Add(gbContact);
