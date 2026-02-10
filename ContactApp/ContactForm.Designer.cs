@@ -39,8 +39,7 @@
             lblLastName = new Label();
             txtFirstName = new TextBox();
             lblFirstName = new Label();
-            lblContactForm = new Label();
-            lbContacts = new ListBox();
+            fpContacts = new FlowLayoutPanel();
             gbContact.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +62,6 @@
             gbContact.Size = new Size(482, 214);
             gbContact.TabIndex = 0;
             gbContact.TabStop = false;
-            gbContact.Text = "Contact Form";
             // 
             // btnClear
             // 
@@ -149,22 +147,16 @@
             lblFirstName.TabIndex = 0;
             lblFirstName.Text = "First Name";
             // 
-            // lblContactForm
+            // fpContacts
             // 
-            lblContactForm.AutoSize = true;
-            lblContactForm.Location = new Point(18, 209);
-            lblContactForm.Name = "lblContactForm";
-            lblContactForm.Size = new Size(0, 20);
-            lblContactForm.TabIndex = 1;
-            // 
-            // lbContacts
-            // 
-            lbContacts.FormattingEnabled = true;
-            lbContacts.Location = new Point(12, 237);
-            lbContacts.Name = "lbContacts";
-            lbContacts.Size = new Size(458, 204);
-            lbContacts.TabIndex = 2;
-            lbContacts.Click += lbContacts_Click;
+            fpContacts.AutoScroll = true;
+            fpContacts.AutoSize = true;
+            fpContacts.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            fpContacts.FlowDirection = FlowDirection.TopDown;
+            fpContacts.Location = new Point(0, 232);
+            fpContacts.Name = "fpContacts";
+            fpContacts.Size = new Size(0, 0);
+            fpContacts.TabIndex = 0;
             // 
             // ContactForm
             // 
@@ -173,8 +165,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(492, 469);
-            Controls.Add(lbContacts);
-            Controls.Add(lblContactForm);
+            Controls.Add(fpContacts);
             Controls.Add(gbContact);
             Name = "ContactForm";
             Text = "Contacts";
@@ -188,8 +179,6 @@
         #endregion
 
         private GroupBox gbContact;
-        private Label lblContactForm;
-        private ListBox lbContacts;
         private TextBox txtFirstName;
         private Label lblFirstName;
         private TextBox textBox2;
@@ -203,5 +192,6 @@
         private Label lblPhone;
         private Button btnSave;
         private Button btnClear;
+        private FlowLayoutPanel fpContacts;
     }
 }

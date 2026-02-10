@@ -17,14 +17,26 @@ namespace ContactApp
 
         }
 
-        public void UpdateContactListBox()
+        public void UpdateContactList()
         {
-            lbContacts.Items.Clear();
             foreach (Contact contact in Contacts)
             {
-                lbContacts.Items.Add(contact);
+                fpContacts.Controls.Add(new ContactControl(contact));
+                // TODO: needs to be cleared before adding new controls, otherwise will be duplicated every time a new contact is added.
+                //fpContacts.Controls.Clear();
+                //Dock mode fill is needed
             }
         }
+        //{
+        //    lbContacts.Items.Clear();
+        //    foreach (Contact contact in Contacts)
+        //    {
+        //        lbContacts.Items.Add(contact);
+        //    }
+        //}
+
+
+        //Create a new contact control and add it to fpContacts
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
@@ -102,7 +114,7 @@ namespace ContactApp
             Contacts.Add(newContact);
 
             //pull the lever to update
-            UpdateContactListBox();
+            UpdateContactList();
 
             ClearForm();
             txtFirstName.Focus();
@@ -110,22 +122,23 @@ namespace ContactApp
 
         private void lbContacts_Click(object sender, EventArgs e)
         {
-            Contact selectedItem = (Contact)lbContacts.SelectedItem;
+            //Contact selectedItem = (Contact)lbContacts.SelectedItem;
 
-            if (selectedItem != null)
-            {
-                int SelectedIndex = lbContacts.SelectedIndex;
-                Debug.WriteLine($"Contact list box was clicked - {selectedItem}");
+            //if (selectedItem != null)
+            //{
+            //    int SelectedIndex = lbContacts.SelectedIndex;
+            //    Debug.WriteLine($"Contact list box was clicked - {selectedItem}");
 
-                selectedItem.isContacted = true;
+            //    selectedItem.isContacted = true;
 
-                lbContacts.Items[SelectedIndex] = selectedItem;
+            //    lbContacts.Items[SelectedIndex] = selectedItem;
 
-                //Show message box saying contact marked as contacted
+            //    //Show message box saying contact marked as contacted
                 
-                MessageBox.Show($"{selectedItem.FirstName} {selectedItem.LastName} Has been contacted. Marked status to Contacted.", "Success");
-                //lbContacts.Items.RemoveAt(SelectedIndex);
-            }
+            //    MessageBox.Show($"{selectedItem.FirstName} {selectedItem.LastName} Has been contacted. Marked status to Contacted.", "Success");
+            //    //lbContacts.Items.RemoveAt(SelectedIndex);
+            //}
+            // TODO: Do I enven need this?
         }
 
         private void btnClear_Clicked(object sender, EventArgs e)
