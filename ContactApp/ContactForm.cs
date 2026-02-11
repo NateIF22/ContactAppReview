@@ -21,7 +21,7 @@ namespace ContactApp
         {
             foreach (Contact contact in Contacts)
             {
-                fpContacts.Controls.Add(new ContactControl(contact));
+                fpContacts.Controls.Add(new ContactControl(contact);
                 // TODO: needs to be cleared before adding new controls, otherwise will be duplicated every time a new contact is added.
                 //fpContacts.Controls.Clear();
                 //Dock mode fill is needed

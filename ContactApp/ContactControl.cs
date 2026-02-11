@@ -20,23 +20,29 @@ namespace ContactApp
             lblFullName.Text = $"{ContactDetails.FirstName} {ContactDetails.LastName}";
             lblAddress.Text = ContactDetails.Email;
             lblPhoneNumber.Text = ContactDetails.PhoneNumber;
-
-            // how do I trigger code on the base form?
         }
 
         private void btnMarkContacted_Click(object sender, EventArgs e)
         {
-            // code to toggle the background of the control to green
-            ContactDetails.isContacted = !ContactDetails.isContacted;
-            if (ContactDetails.isContacted)
+            //// code to toggle the background of the control to green
+            //ContactDetails.isContacted = !ContactDetails.isContacted;
+            //if (ContactDetails.isContacted)
+            //{
+            //    this.BackColor = Color.LawnGreen;
+            //}
+            //else
+            //{
+            //    this.BackColor = SystemColors.Control;
+            //}
+            var fp = this.Parent;
+            var frm = fp?.Parent as ContactForm;
+
+            if (frm != null)
             {
-                this.BackColor = Color.Green;
+                // delete myself from the list of contacts on the base for.
+                frm.Contacts.Remove(ContactDetails);
+                frm.UpdateContactList();
             }
-            else
-            {
-                this.BackColor = Color.LightGray;
-            }
-            
         }
     }
 }

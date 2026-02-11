@@ -111,6 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             Controls.Add(btnMarkContacted);
             Controls.Add(lblAddress);
             Controls.Add(lblAddressLabel);
