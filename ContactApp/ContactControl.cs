@@ -26,7 +26,17 @@ namespace ContactApp
 
         private void btnMarkContacted_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"You have marked {name} as contacted.");
+            // code to toggle the background of the control to green
+            ContactDetails.isContacted = !ContactDetails.isContacted;
+            if (ContactDetails.isContacted)
+            {
+                this.BackColor = Color.Green;
+            }
+            else
+            {
+                this.BackColor = Color.LightGray;
+            }
+            
         }
     }
 }

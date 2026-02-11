@@ -150,12 +150,11 @@
             // fpContacts
             // 
             fpContacts.AutoScroll = true;
-            fpContacts.AutoSize = true;
             fpContacts.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             fpContacts.FlowDirection = FlowDirection.TopDown;
-            fpContacts.Location = new Point(0, 232);
+            fpContacts.Location = new Point(12, 223);
             fpContacts.Name = "fpContacts";
-            fpContacts.Size = new Size(0, 0);
+            fpContacts.Size = new Size(468, 234);
             fpContacts.TabIndex = 0;
             // 
             // ContactForm
